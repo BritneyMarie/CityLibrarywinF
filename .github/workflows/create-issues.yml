@@ -1,0 +1,73 @@
+name: Create Tracking Issues
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Create bug issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const bugs = [
+              "IssuesReturnForm.cs — Missing constructor declaration",
+              "MembersForm.cs — Broken object initializer syntax",
+              "Manage Books.cs — Wrong event handler signature (3 parameters)",
+              "books.cs — `Add()` throws NotImplementedException",
+              "IssuesReturnForm.cs — `Manage_Books.book` static list doesn't exist",
+              "IssuesReturnForm.cs — `Members.members` static list doesn't exist",
+              "IssuesReturnForm.cs — `Transaction.Add()` not defined",
+              "IssuesReturnForm.cs — `IsAvailabe` property missing from books class",
+            ];
+            for (const title of bugs) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                labels: ["bug"],
+              });
+            }
+
+      - name: Create typo issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const typos = [
+              'Fix typo: "Authour" → "Author" across all files',
+              'Fix typo: "IsAvailabe" → "IsAvailable" in IssuesReturnForm.cs',
+            ];
+            for (const title of typos) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                labels: ["good first issue"],
+              });
+            }
+
+      - name: Create enhancement issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const enhancements = [
+              "Create `DataStore.cs` — shared static data lists",
+              "Implement Add Book functionality in Manage Books form",
+              "Implement Add Member functionality in MembersForm",
+              "Implement Return Book logic in IssuesReturnForm",
+              "Wire up Returns button in Form1",
+              "Add data persistence using JSON (save/load on app open/close)",
+              "Add input validation across all forms",
+            ];
+            for (const title of enhancements) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                labels: ["enhancement"],
+              });
+            }

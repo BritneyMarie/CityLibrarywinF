@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CityLibrarywinF
 {
-     public class Members
+    public class Members
     {
         public static List<Members> members = new List<Members>();
 
-        public string MemberID { get; set; }
+        public string MemberID { get; set; } = string.Empty;
 
-        public string MemberName { get; set; }
+        public string MemberName { get; set; } = string.Empty;
 
         public override string ToString()
         {

@@ -8,25 +8,20 @@ namespace CityLibrarywinF
 {
     public class books
     {
-        public string ISBN { get; set; }
+        public string ISBN { get; set; } = string.Empty;
 
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        public string Authour { get; set; }
+        public string Authour { get; set; } = string.Empty;
 
-
-        public string Edition { get; set; }
+        public string Edition { get; set; } = string.Empty;
 
         public bool IsAvailabe { get; set; } = true;
 
         public override string ToString()
         {
-            return $"{ISBN} - {Title} by {Authour} (Edition : {Edition})";
-        }
-
-        internal void Add(books books)
-        {
-            throw new NotImplementedException();
+            string status = IsAvailabe ? "Available" : "Issued";
+            return $"{ISBN} - {Title} by {Authour} (Edition: {Edition}) [{status}]";
         }
     }
 }

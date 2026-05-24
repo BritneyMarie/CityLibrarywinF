@@ -2,7 +2,6 @@ namespace CityLibrarywinF
 {
     public partial class Form1 : Form
     {
-        private List<books> books = new List<books>();
         public Form1()
         {
             InitializeComponent();
@@ -16,15 +15,14 @@ namespace CityLibrarywinF
 
         private void btn_ManageMembers_Click(object sender, EventArgs e)
         {
-        MembersForm members = new MembersForm();
+            MembersForm members = new MembersForm();
             members.ShowDialog();
-            
-            
         }
 
         private void btn_Returns_Click(object sender, EventArgs e)
         {
-
+            IssuesReturnForm issuesReturn = new IssuesReturnForm();
+            issuesReturn.ShowDialog();
         }
     }
 }

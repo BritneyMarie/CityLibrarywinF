@@ -39,6 +39,7 @@
             txt_Edition = new TextBox();
             lstShowBooks = new ListBox();
             btnAddBooks = new Button();
+            btnRemoveBook = new Button();
             panel1 = new Panel();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -154,12 +155,27 @@
             btnAddBooks.ForeColor = Color.White;
             btnAddBooks.Location = new Point(89, 450);
             btnAddBooks.Name = "btnAddBooks";
-            btnAddBooks.Size = new Size(311, 45);
+            btnAddBooks.Size = new Size(150, 45);
             btnAddBooks.TabIndex = 9;
             btnAddBooks.Text = "Add Book";
             btnAddBooks.UseVisualStyleBackColor = false;
             btnAddBooks.Click += btnAddBooks_Click;
-            // 
+            //
+            // btnRemoveBook
+            //
+            btnRemoveBook.BackColor = Color.FromArgb(220, 120, 120);
+            btnRemoveBook.FlatAppearance.BorderSize = 0;
+            btnRemoveBook.FlatStyle = FlatStyle.Flat;
+            btnRemoveBook.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemoveBook.ForeColor = Color.White;
+            btnRemoveBook.Location = new Point(250, 450);
+            btnRemoveBook.Name = "btnRemoveBook";
+            btnRemoveBook.Size = new Size(150, 45);
+            btnRemoveBook.TabIndex = 11;
+            btnRemoveBook.Text = "Remove";
+            btnRemoveBook.UseVisualStyleBackColor = false;
+            btnRemoveBook.Click += btnRemoveBook_Click;
+            //
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(173, 216, 230);
@@ -188,6 +204,7 @@
             BackColor = Color.White;
             ClientSize = new Size(500, 530);
             Controls.Add(panel1);
+            Controls.Add(btnRemoveBook);
             Controls.Add(btnAddBooks);
             Controls.Add(lstShowBooks);
             Controls.Add(txt_Edition);
@@ -221,6 +238,7 @@
         private TextBox txt_Edition;
         private ListBox lstShowBooks;
         private Button btnAddBooks;
+        private Button btnRemoveBook;
         private Panel panel1;
         private Label label1;
     }

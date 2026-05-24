@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,7 +37,7 @@ namespace CityLibrarywinF
 
 
             private void ClearInputs()
-            { 
+            {
             txt_ISBN.Clear();
             txt_Title.Clear();
             txt_Authour.Clear();

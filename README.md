@@ -1,4 +1,4 @@
-﻿# City Library Management System
+# City Library Management System
 
 A Windows Forms desktop application for managing a city library's books, members, and book issue/return transactions.
 

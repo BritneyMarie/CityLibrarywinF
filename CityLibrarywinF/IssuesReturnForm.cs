@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,8 +35,8 @@ namespace CityLibrarywinF
             var member = (Members)cmb_ChooseMembers.SelectedItem;
 
             book.IsAvailabe = false;
-            Transaction.Add(new Transaction { 
-                
+            Transaction.Add(new Transaction {
+
                 ISBN = book.ISBN,
                 MemberID = member.MemberID,
                 IssueDate = DateTime.Now,
